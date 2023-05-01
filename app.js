@@ -22,7 +22,7 @@ d3.csv("tf_predictions.csv").then(function (data) {
     output = _.sortBy(filteredData, 'article_id').reverse()
 
     for (var i = 0; i < filteredData.length; i++) {
-      d3.select("tbody").insert("tr").html("<td>"+[i+1]+"</td>"+"<td>"+output[i]['prediction']); }
+      d3.select("tbody").insert("tr").html("<td>"+"</td>"+"<td>"+output[i]['prediction']); }
   };
   window.resizeTo(screen.width,screen.height)
 

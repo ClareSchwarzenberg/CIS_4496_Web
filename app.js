@@ -33,7 +33,7 @@ d3.csv("tf_predictions.csv").then(function (data) {
       d3.select("tbody").insert("tr").html("</td>"+"</td>"+output[i]['prediction']); }
 
     for (var i = 0; i < 12; i++) {
-      var source = '/images' + '/0108775015' + 'jpg';
+      var source = '/images' + '/0108775015' + '.jpg';
       displayImage(source, 200, 250); }
 
   };

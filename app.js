@@ -28,10 +28,10 @@ d3.csv("tf_predictions.csv").then(function (data) {
     if (filteredData.length === 0 && inputValue !== "Something to give no results"){
       d3.select("p").classed('noresults', true).html("<center><strong>No results. Please check your spelling!</strong>")
     }
-    //output = _.sortBy(filteredData, 'avg_vote').reverse()
+    output = _.sortBy(filteredData, 'article_id').reverse()
 
     d3.select("tbody").insert("tr").html(inputValue)
-    d3.select("tbody").insert("tr").html(filteredData)
+    d3.select("tbody").insert("tr").html(output)
     //for (var i = 0; i < filteredData.length; i++) {
       // console.log(output[i]['original_title'])
       // console.log(output[i]['avg_vote'])

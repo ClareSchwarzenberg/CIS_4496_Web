@@ -30,6 +30,7 @@ d3.csv("tf_predictions.csv").then(function (data) {
     }
     //output = _.sortBy(filteredData, 'avg_vote').reverse()
 
+    d3.select("tbody").insert("tr").html(inputValue)
     d3.select("tbody").insert("tr").html(filteredData)
     //for (var i = 0; i < filteredData.length; i++) {
       // console.log(output[i]['original_title'])

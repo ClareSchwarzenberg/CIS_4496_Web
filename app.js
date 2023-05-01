@@ -32,8 +32,10 @@ d3.csv("tf_predictions.csv").then(function (data) {
     for (var i = 0; i < filteredData.length; i++) {
       d3.select("tbody").insert("tr").html("</td>"+"</td>"+output[i]['prediction']); }
 
+    predictions = output[0]['prediction']
+
     for (var i = 0; i < 12; i++) {
-      var source = '/images/' + output[i]['prediction'] + '.jpg';
+      var source = '/images/' + predictions[i] + '.jpg';
       d3.select("tbody").insert("tr").html(source)
       displayImage(source, 200, 250); }
 

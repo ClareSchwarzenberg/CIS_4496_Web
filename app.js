@@ -12,7 +12,7 @@ d3.csv("tf_predictions.csv").then(function (data) {
 
   function runEnter() {
     d3.select("tbody").html("")
-    d3.selectAll("p").classed('noresults', true).html("")
+    //d3.selectAll("p").classed('noresults', true).html("")
     d3.event.preventDefault();
     var inputElement = d3.select("#user-input");
     var inputValue = inputElement.property("value");

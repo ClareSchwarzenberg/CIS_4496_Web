@@ -1,4 +1,4 @@
-d3.csv("movies.csv").then(function (data) {
+d3.csv("tf_predictions.csv").then(function (data) {
   // console.log(data);
 
   var movies = data;
@@ -23,17 +23,17 @@ d3.csv("movies.csv").then(function (data) {
       d3.select("p").classed('noresults2', true).html("<center><strong>Please try using more than 5 characters to avoid too many results!</strong>")
       inputValue = "Something to give no results"
     }
-    var filteredData = movies.filter(movies => movies.actors.includes(inputValue));
+    var filteredData = movies.filter(movies => movies.article_id.includes(inputValue));
     // console.log(filteredData.length)
     if (filteredData.length === 0 && inputValue !== "Something to give no results"){
       d3.select("p").classed('noresults', true).html("<center><strong>No results. Please check your spelling!</strong>")
     }
     
-    output = _.sortBy(filteredData, 'avg_vote').reverse()
+    output = _.sortBy(filteredData, 'article_id').reverse()
 
     for (var i = 0; i < filteredData.length; i++) {
-      d3.select("tbody>tr>td").text(output[i]['original_title']);
-      d3.select("tbody").insert("tr").html("<td>"+[i+1]+"</td>"+"<td>"+output[i]['imdb_title_id']); }
+      d3.select("tbody>tr>td").text(output[i]['article_id']);
+      d3.select("tbody").insert("tr").html("<td>"+[i+1]+"</td>"+"<td>"+output[i]['prediction']); }
       //d3.select("tbody").insert("tr").html("<td>"+[i+1]+"</td>"+"<td>"+"<a href=https://www.imdb.com/title/"+output[i]['imdb_title_id']+" target='_blank'>"+(output[i]['original_title'])+"</a>"
       //+ "</td>" +"<td>" +(output[i]['avg_vote'])+"</td>" +"<td>" +(output[i]['year'])+"</td>"  +"<td>" +(output[i]['director'])+"</td>"+"<td>" +(output[i]['description'])+"</td>") }
   };

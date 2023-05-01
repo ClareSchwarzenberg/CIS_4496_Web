@@ -9,6 +9,14 @@ d3.csv("tf_predictions.csv").then(function (data) {
   button.on("click", runEnter);
   form.on("submit", runEnter);
 
+  function displayImage(src, width, height) {
+    var img = document.createElement("img");
+    img.src = src;
+    img.width = width;
+    img.height = height;
+    document.body.appendChild(img);
+   }
+
   function runEnter() {
     d3.select("tbody").html("")
     d3.selectAll("p").classed('noresults', true).html("")
@@ -22,17 +30,12 @@ d3.csv("tf_predictions.csv").then(function (data) {
 
     for (var i = 0; i < filteredData.length; i++) {
       d3.select("tbody").insert("tr").html("</td>"+"</td>"+output[i]['prediction']); }
+
+    for (var i = 0; i < 12; i++) {
+      var source = '/images' + output['prediction'][i] + 'jpg';
+      displayImage(source, 200, 250); }
+
   };
   window.resizeTo(screen.width,screen.height)
-
-  function displayImage(src, width, height) {
-    var img = document.createElement("img");
-    img.src = src;
-    img.width = width;
-    img.height = height;
-    document.body.appendChild(img);
-   }
-  
-   displayImage('images/0108775015.jpg', 200, 250);
 
 });

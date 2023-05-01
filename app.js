@@ -32,12 +32,20 @@ d3.csv("tf_predictions.csv").then(function (data) {
     for (var i = 0; i < filteredData.length; i++) {
       d3.select("tbody").insert("tr").html("</td>"+"</td>"+output[i]['prediction']); }
 
-    predictions = output[0]['prediction']
-    
-    for (var i = 0; i < filteredData.length; i++) {
+    var predictions = output[0]['prediction']
+    var str_array = predictions.split(',');
+
+    for(var i = 0; i < str_array.length; i++) {
+      // Trim the excess whitespace.
+      str_array[i] = str_array[i].replace(/^\s*/, "").replace(/\s*$/, "");
+      // Add additional code here, such as:
       var source = '/images/' + output[i]['prediction'] + '.jpg';
       d3.select("tbody").insert("tr").html(source)
-      displayImage(source, 200, 250); }
+      displayImage(source, 200, 250);
+    }
+
+    //for (var i = 0; i < 12; i++) {
+      
 
   };
   window.resizeTo(screen.width,screen.height)

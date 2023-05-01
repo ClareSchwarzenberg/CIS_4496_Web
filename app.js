@@ -21,7 +21,7 @@ d3.csv("tf_predictions.csv").then(function (data) {
     output = _.sortBy(filteredData, 'article_id').reverse()
 
     for (var i = 0; i < filteredData.length; i++) {
-      d3.select("tbody").insert("tr").html(inputValue+output[i]['prediction']); }
+      d3.select("tbody").insert("tr").html(inputValue+"</td>"+output[i]['prediction']); }
   };
   window.resizeTo(screen.width,screen.height)
 

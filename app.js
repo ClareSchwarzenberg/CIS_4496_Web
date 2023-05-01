@@ -33,8 +33,8 @@ d3.csv("tf_predictions.csv").then(function (data) {
       d3.select("tbody").insert("tr").html("</td>"+"</td>"+output[i]['prediction']); }
 
     var predictions = output[0]['prediction']
-    predictions.replace(/['"]+/g, '');
-    predictions.replace(/[\[\]']+/g, '');
+    predictions = predictions.replace(/['"]+/g, '');
+    predictions = predictions.replace(/[\[\]']+/g, '');
     var str_array = predictions.split(',');
 
     for(var i = 0; i < str_array.length; i++) {

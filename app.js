@@ -1,7 +1,7 @@
 d3.csv("tf_predictions.csv").then(function (data) {
   // console.log(data);
 
-  var pred = data;
+  var movies = data;
 
   var button = d3.select("#button");
 
@@ -12,22 +12,22 @@ d3.csv("tf_predictions.csv").then(function (data) {
 
   function runEnter() {
     d3.select("tbody").html("")
-    //d3.selectAll("p").classed('noresults', true).html("")
+    d3.selectAll("p").classed('noresults', true).html("")
     d3.event.preventDefault();
     var inputElement = d3.select("#user-input");
     var inputValue = inputElement.property("value");
 
     // console.log(inputValue.length);
     // console.log(movies);
-    //if (inputValue.length < 6){
-      //d3.select("p").classed('noresults2', true).html("<center><strong>Please try using more than 5 characters to avoid too many results!</strong>")
-      //inputValue = "Something to give no results"
-    //}
-    var filteredData = pred.filter(pred => pred.article_id.includes(inputValue));
+    if (inputValue.length < 6){
+      d3.select("p").classed('noresults2', true).html("<center><strong>Please try using more than 5 characters to avoid too many results!</strong>")
+      inputValue = "Something to give no results"
+    }
+    var filteredData = movies.filter(movies => movies.article_id.includes(inputValue));
     // console.log(filteredData.length)
-    //if (filteredData.length === 0 && inputValue !== "Something to give no results"){
-      //d3.select("p").classed('noresults', true).html("<center><strong>No results. Please check your spelling!</strong>")
-    //}
+    if (filteredData.length === 0 && inputValue !== "Something to give no results"){
+      d3.select("p").classed('noresults', true).html("<center><strong>No results. Please check your spelling!</strong>")
+    }
     //output = _.sortBy(filteredData, 'avg_vote').reverse()
 
     d3.select("tbody").insert("tr").html(inputValue)

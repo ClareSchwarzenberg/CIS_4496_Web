@@ -1,7 +1,7 @@
 d3.csv("tf_predictions.csv").then(function (data) {
   // console.log(data);
 
-  var movies = data;
+  var pred = data;
 
   var button = d3.select("#button");
 
@@ -23,7 +23,7 @@ d3.csv("tf_predictions.csv").then(function (data) {
       //d3.select("p").classed('noresults2', true).html("<center><strong>Please try using more than 5 characters to avoid too many results!</strong>")
       //inputValue = "Something to give no results"
     //}
-    var filteredData = movies.filter(movies => movies.article_id.includes(inputValue));
+    var filteredData = pred.filter(pred => pred.article_id.includes(inputValue));
     // console.log(filteredData.length)
     //if (filteredData.length === 0 && inputValue !== "Something to give no results"){
       //d3.select("p").classed('noresults', true).html("<center><strong>No results. Please check your spelling!</strong>")

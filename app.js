@@ -42,7 +42,7 @@ d3.csv("tf_predictions.csv").then(function (data) {
       str_array[i] = str_array[i].replace(/^\s*/, "").replace(/\s*$/, "");
       // Add additional code here, such as:
       var source = '/images/' + str_array[i] + '.jpg';
-      d3.select("tbody").insert("tr").html(source)
+      //d3.select("tbody").insert("tr").html(source)
       displayImage(source, 200, 250);
     }
 

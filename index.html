@@ -19,7 +19,7 @@
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes" /> -->
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <title>Movies!</title>
+  <title>H&M Recommender System</title>
 
   <link rel="icon" type="image/x-icon" href="assets/img/film.svg" />
   <!-- Font Awesome icons (free version)-->
@@ -55,21 +55,20 @@
             <br>
             <br>
             <br>
-            <h1 class=>Find Movies!</h1>
-            <h2 class=>Enter the name of an actor/actress to see his/her best movies!</h2>
-            <h6>(Click <a href="https://jurgenarias.github.io/director/">here</a> to search by director instead)</h6>
+            <h1 class=>Find Recommendations!</h1>
+            <h2 class=>Enter an article ID to receive recommendations!</h2>
             <form id="form">
 
               <div class="input-group input-group-newsletter">
 
-                <input class="form-control" id="user-input" placeholder="Enter actor/actress..."
+                <input class="form-control" id="user-input" placeholder="Enter article id..."
                   aria-label="Enter email..." aria-describedby="submit-button">
                 <br>
                 <br>
                 <br>
                 <br>
                 <div class="boton input-group-append" id="boton">
-                  <button class="boton btn btn-secondary" type="button" id="button">Find Movies!</button>
+                  <button class="boton btn btn-secondary" type="button" id="button">Submit</button>
                 </div>
               </div>
             </form>
@@ -82,8 +81,8 @@
             <table class="table" cellpadding="10">
               <thead>
                 <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Movie</th>
+                  <th scope="col">Article ID</th>
+                  <th scope="col">Recommendations</th>
 
                 </tr>
               </thead>

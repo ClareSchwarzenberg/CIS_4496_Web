@@ -23,6 +23,7 @@ d3.csv("tf_predictions.csv").then(function (data) {
     var filteredData = pred.filter(pred => pred.article_id.includes(inputValue));
     // console.log(filteredData.length)
     d3.select("tbody").insert("tr").html(inputValue)
+    d3.select("tbody").insert("tr").html(filteredData)
   };
   window.resizeTo(screen.width,screen.height)
 

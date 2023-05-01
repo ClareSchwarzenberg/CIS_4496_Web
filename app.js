@@ -25,9 +25,9 @@ d3.csv("tf_predictions.csv").then(function (data) {
     }
     var filteredData = movies.filter(movies => movies.article_id.includes(inputValue));
     // console.log(filteredData.length)
-    if (filteredData.length === 0 && inputValue !== "Something to give no results"){
-      d3.select("p").classed('noresults', true).html("<center><strong>No results. Please check your spelling!</strong>")
-    }
+    //if (filteredData.length === 0 && inputValue !== "Something to give no results"){
+      //d3.select("p").classed('noresults', true).html("<center><strong>No results. Please check your spelling!</strong>")
+    //}
     //output = _.sortBy(filteredData, 'avg_vote').reverse()
 
     d3.select("tbody").insert("tr").html(inputValue)

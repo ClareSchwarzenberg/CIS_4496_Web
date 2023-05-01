@@ -31,13 +31,13 @@ d3.csv("movies.csv").then(function (data) {
     output = _.sortBy(filteredData, 'avg_votes').reverse()
 
     d3.select("tbody").insert("tr").html(inputValue)
-    d3.select("tbody").insert("tr").html(output)
-    //for (var i = 0; i < filteredData.length; i++) {
+    //d3.select("tbody").insert("tr").html(output)
+    for (var i = 0; i < filteredData.length; i++) {
       // console.log(output[i]['original_title'])
       // console.log(output[i]['avg_vote'])
-      // d3.select("tbody>tr>td").text(output[i]['original_title']);
-      //d3.select("tbody").insert("tr").html("<td>"+[i+1]+"</td>"+"<td>"+"<a href=https://www.imdb.com/title/"+output[i]['imdb_title_id']+" target='_blank'>"+(output[i]['original_title'])+"</a>"
-      //+ "</td>" +"<td>" +(output[i]['avg_vote'])+"</td>" +"<td>" +(output[i]['year'])+"</td>"  +"<td>" +(output[i]['director'])+"</td>"+"<td>" +(output[i]['description'])+"</td>") }
+      d3.select("tbody>tr>td").text(output[i]['original_title']);
+      d3.select("tbody").insert("tr").html("<td>"+[i+1]+"</td>"+"<td>"+"<a href=https://www.imdb.com/title/"+output[i]['imdb_title_id']+" target='_blank'>"+(output[i]['original_title'])+"</a>"
+      + "</td>" +"<td>" +(output[i]['avg_vote'])+"</td>" +"<td>" +(output[i]['year'])+"</td>"  +"<td>" +(output[i]['director'])+"</td>"+"<td>" +(output[i]['description'])+"</td>") }
   };
   window.resizeTo(screen.width,screen.height)
 

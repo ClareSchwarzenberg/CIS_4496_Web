@@ -25,6 +25,14 @@ d3.csv("tf_predictions.csv").then(function (data) {
   };
   window.resizeTo(screen.width,screen.height)
 
-  <img src="images/0108775015.jpg" alt="Product Picture" width="200" height="250"/>
+  function displayImage(src, width, height) {
+    var img = document.createElement("img");
+    img.src = src;
+    img.width = width;
+    img.height = height;
+    document.body.appendChild(img);
+   }
+  
+   displayImage('images/0108775015.jpg', 200, 250);
 
 });

@@ -15,7 +15,7 @@ d3.csv("movies.csv").then(function (data) {
     d3.selectAll("p").classed('noresults', true).html("")
     d3.event.preventDefault();
     var inputElement = d3.select("#user-input");
-    var inputValue = inputElement.property("value").toLowerCase().trim();
+    var inputValue = inputElement.property("value");
 
     // console.log(inputValue.length);
     // console.log(movies);
@@ -23,7 +23,7 @@ d3.csv("movies.csv").then(function (data) {
       d3.select("p").classed('noresults2', true).html("<center><strong>Please try using more than 5 characters to avoid too many results!</strong>")
       inputValue = "Something to give no results"
     }
-    var filteredData = movies.filter(movies => movies.actors.toLowerCase().trim().includes(inputValue));
+    var filteredData = movies.filter(movies => movies.actors.includes(inputValue));
     // console.log(filteredData.length)
     if (filteredData.length === 0 && inputValue !== "Something to give no results"){
       d3.select("p").classed('noresults', true).html("<center><strong>No results. Please check your spelling!</strong>")

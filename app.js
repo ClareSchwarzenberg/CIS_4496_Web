@@ -1,4 +1,4 @@
-d3.csv("tf_predictions.csv").then(function (data) {
+d3.csv("movies.csv").then(function (data) {
   // console.log(data);
 
   var movies = data;
@@ -23,12 +23,12 @@ d3.csv("tf_predictions.csv").then(function (data) {
       d3.select("p").classed('noresults2', true).html("<center><strong>Please try using more than 5 characters to avoid too many results!</strong>")
       inputValue = "Something to give no results"
     }
-    var filteredData = movies.filter(movies => movies.article_id.includes(inputValue));
+    var filteredData = movies.filter(movies => movies.actors.includes(inputValue));
     // console.log(filteredData.length)
     if (filteredData.length === 0 && inputValue !== "Something to give no results"){
       d3.select("p").classed('noresults', true).html("<center><strong>No results. Please check your spelling!</strong>")
     }
-    output = _.sortBy(filteredData, 'article_id').reverse()
+    output = _.sortBy(filteredData, 'avg_votes').reverse()
 
     d3.select("tbody").insert("tr").html(inputValue)
     d3.select("tbody").insert("tr").html(output)

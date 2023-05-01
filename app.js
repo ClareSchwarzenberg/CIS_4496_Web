@@ -39,7 +39,7 @@ d3.csv("tf_predictions.csv").then(function (data) {
       // Trim the excess whitespace.
       str_array[i] = str_array[i].replace(/^\s*/, "").replace(/\s*$/, "");
       // Add additional code here, such as:
-      var source = '/images/' + output[i]['prediction'] + '.jpg';
+      var source = '/images/' + str_array + '.jpg';
       d3.select("tbody").insert("tr").html(source)
       displayImage(source, 200, 250);
     }

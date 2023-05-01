@@ -15,7 +15,6 @@ d3.csv("tf_predictions.csv").then(function (data) {
     d3.event.preventDefault();
     var inputElement = d3.select("#user-input");
     var inputValue = inputElement.property("value");
-    d3.select("tbody").html(inputValue)
 
     var filteredData = pred.filter(pred => pred.article_id.includes(inputValue));
     

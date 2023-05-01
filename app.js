@@ -14,6 +14,7 @@ d3.csv("tf_predictions.csv").then(function (data) {
     img.src = src;
     img.width = width;
     img.height = height;
+    img.alt = "Product Picture"
     document.body.appendChild(img);
    }
 
